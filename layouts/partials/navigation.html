@@ -1,6 +1,6 @@
 <nav class="navigation">
 	{{ if not .IsHome }}
-		<a href='/'> <span class="arrow">←</span>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
+		<a href='/'> <span class="arrow">« </span>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
 	{{ end }}
 	<a href='/posts'>{{ with .Site.Params.archive }}{{ . }}{{ else }}Archive{{ end }}</a>
 	<a href='/tags'>{{ with .Site.Params.tags }}{{ . }}{{ else }}Tags{{ end }}</a>
