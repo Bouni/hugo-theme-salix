@@ -1,0 +1,17 @@
+<footer id="footer">
+    {{ if .Site.Social }}
+        {{ partial "social.html" . }}
+    {{ end }}
+
+    <p class="copyright">
+    {{ with .Site.Params.copyright }}
+        {{ . | markdownify }}
+    {{ else }}
+       © Copyright 
+       {{ now.Format "2006"}} by {{ .Site.Params.Author }}
+    {{ end }}
+    </p>
+    <p class="powerby">
+    Powered by <a href="http://www.gohugo.io/">Hugo</a>, with a modified version of <a href="https://github.com/nodejh/hugo-theme-cactus-plus">catus plus</a> by nodejh.
+    </p>
+</footer>
