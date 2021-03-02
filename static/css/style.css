@@ -1,6 +1,6 @@
 :root {
   --green-1: #2eca0e;
-  --green-2: #76df60;
+  --green-2: #78c867;
 }
 
 /* montserrat-300 - latin */
@@ -174,7 +174,7 @@ nav.navigation a {
   right: 6px;
   padding: 8px 12px;
   color: var(--green-2);
-  font-size: 13px;
+  font-size: 18px;
   line-height: 1.35;
   border-radius: 3px;
 }
@@ -265,7 +265,7 @@ svg:hover {
 /* profile  */
 
 .profile {
-  margin: 60px auto 0 auto;
+  margin: 10px auto 0 auto;
   text-align: center;
 }
 
