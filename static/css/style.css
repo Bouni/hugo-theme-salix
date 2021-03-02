@@ -1,3 +1,8 @@
+:root {
+  --green-1: #2eca0e;
+  --green-2: #76df60;
+}
+
 body {
   line-height: 1;
   font: normal 15px/1.5em 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -8,11 +13,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #5badf0;
+  color: var(--green-2);
 }
 
 a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 
 /* markdown content styles */
@@ -139,23 +144,27 @@ nav.navigation a {
   top: 8px;
   right: 6px;
   padding: 8px 12px;
-  color: #5badf0;
+  color: var(--green-2);
   font-size: 13px;
   line-height: 1.35;
   border-radius: 3px;
 }
 nav.navigation a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 
 nav.navigation a.button {
-  background: #5badf0;
+  background: var(--green-2);
   color: #fff;
   margin-left: 12px;
 }
 
 .arrow {
   vertical-align: text-bottom;
+}
+
+svg:hover {
+  fill: var(--green-1);   
 }
 
 @media (max-width: 700px) {
@@ -171,7 +180,7 @@ nav.navigation a.button {
     top: 8px;
     right: 6px;
     padding: 8px 8px;
-    color: #5badf0;
+    color: var(--green-2);
     font-size: 13px;
     line-height: 1.35;
     border-radius: 3px;
@@ -241,14 +250,14 @@ nav.navigation a.button {
 .profile h1 {
   font-weight: 400;
   letter-spacing: 0px;
-  font-size: 20px;
+  font-size: 2.4em;
   color: #404040;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .profile h2 {
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 300;
   color: #757575;
   margin-top: 0;
@@ -280,7 +289,7 @@ nav.navigation a.button {
 }
 
 #list-page .title a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 
 #list-page .date {
@@ -372,7 +381,7 @@ nav.navigation a.button {
   margin-right: 3px;
 }
 #single .tags a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 
 
@@ -410,7 +419,7 @@ nav.navigation a.button {
   color:#404040;
 }
 #archive .group .value .title a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 #archive .group .value .tags {
   display: inline;
@@ -424,7 +433,7 @@ nav.navigation a.button {
   margin-right: 3px;
 }
 #archive .group .value .tags a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 
 /* taxonomy */
@@ -457,7 +466,7 @@ nav.navigation a.button {
   margin-right: 3px;
 }
 #tags .tag a:hover {
-  color: #0366d6;
+  color: var(--green-1);
 }
 
 /* section page */
