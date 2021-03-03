@@ -18,14 +18,14 @@
                           {{ .Title }}
                       </a>
 
-                      {{ with .Params.tags }}
+                  </div>
+                     {{ with .Params.tags }}
                           <div class="tags">
                               {{ range . }}
                                   <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>
                               {{ end }}
                           </div>
                       {{ end}}
-                  </div>
                 </div>
             {{ end }}          
         </div>
