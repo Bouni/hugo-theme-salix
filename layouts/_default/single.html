@@ -36,10 +36,11 @@
             {{ end }}
         </div>
     {{ end}}
-    
-    {{ partial "comment.html" . }}
+
+    {{ if (and .Site.Params.remark42SiteID (eq .Type "posts")) }}
+        <div id="remark42"></div>
+    {{ end }}
 
 </section>
-
 {{ end }}
 

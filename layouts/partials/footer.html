@@ -14,4 +14,23 @@
     <p class="powerby">
     Powered by <a href="http://www.gohugo.io/">Hugo</a>, using the <a href="https://github.com/Bouni/hugo-theme-salix/">salix</a> theme.
     </p>
+    {{ if (and .Site.Params.remark42SiteID (eq .Type "posts")) }}
+    <script>
+      var remark_config = {
+        host: {{ .Site.Params.remark42Url }},
+        site_id: {{ .Site.Params.remark42SiteID }},
+        url: {{ .Permalink }},
+          locale: {{ .Site.Language.Lang }}
+      };
+
+      (function(c) {
+        for(var i = 0; i < c.length; i++){
+          var d = document, s = d.createElement('script');
+          s.src = remark_config.host + '/web/' + c[i] +'.js';
+          s.defer = true;
+          (d.head || d.body).appendChild(s);
+        }
+      })(remark_config.components || ['embed']);
+    </script>
+    {{ end }}
 </footer>
