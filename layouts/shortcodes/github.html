@@ -1,4 +1,28 @@
-{{ $dataJ := getJSON "https://api.github.com/repos/"  (.Get "repo")  "/contents/"  (.Get "file")  }}
-{{ $con := base64Decode $dataJ.content }}
+{{/* inspired by https://www.veriphor.com/articles/syntax-highlighting-for-github-files/ */}}
 
-{{ highlight $con (.Get "lang") (.Get "options") }}
+{{- $repo := (.Get "repo") -}}
+{{- $file := (.Get "file") -}}
+{{- $lang := (.Get "lang") -}}
+{{- $opt := (.Get "options") -}}
+
+{{- if and $repo $file -}}
+   {{- template "render-github-file" (dict "repo" $repo "file" $file "lang" $lang "opt" $opt) -}}
+ {{- else -}}
+   {{- errorf "The %q shortcode requires two named parameters: repo and file. See %s" .Name .Position -}}
+{{- end -}}
+
+{{- define "render-github-file" -}}
+ {{- $url := printf "https://raw.githubusercontent.com/%v/main/%v" .repo .file -}}
+ {{- $lang := .lang -}}
+ {{- $opt := .opt -}}
+ {{- with resources.GetRemote $url -}}
+    {{- with .Err -}}
+      {{- errorf "%s" . -}}
+    {{- else -}}
+      {{- highlight .Content $lang $opt -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnidf "shortcode-github-getremote" "The %q shortcode was unable to retrieve the remote data. See %s" .name .position -}}
+  {{- end -}}
+{{- end -}}
+
