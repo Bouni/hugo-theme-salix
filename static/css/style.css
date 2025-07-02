@@ -135,6 +135,7 @@ h4:hover a {
 }
 .highlight pre {
   padding: 7px;
+  border-radius: 5px;
 }
 
 .highlight {
