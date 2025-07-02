@@ -15,10 +15,10 @@
  {{- $url := printf "https://raw.githubusercontent.com/%v/main/%v" .repo .file -}}
  {{- $lang := .lang -}}
  {{- $opt := .opt -}}
- {{- with resources.GetRemote $url -}}
+ {{- with try (resources.GetRemote $url) -}}
     {{- with .Err -}}
       {{- errorf "%s" . -}}
-    {{- else -}}
+    {{- else with .Value -}}
       {{- highlight .Content $lang $opt -}}
     {{- end -}}
   {{- else -}}
